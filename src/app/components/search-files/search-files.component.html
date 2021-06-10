@@ -1,0 +1,15 @@
+<div class="form-group">
+  <input #inputVal type="text" (keyup)="search(inputVal.value)" placeholder="Search.."/>
+</div>
+
+<div class="card">
+  <div class="card-header">List of Files</div>
+  <ul
+    class="list-group list-group-flush"
+    *ngFor="let file of searchResults | async"
+  >
+    <li class="list-group-item">
+      <a>{{ file }}</a>
+    </li>
+  </ul>
+</div>
